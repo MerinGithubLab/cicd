@@ -1,15 +1,11 @@
-#This is CICD integration
-import json
-def lambda_handler(event, context):
-    # TODO implement
-    return {
-        'statusCode': 200,
-        'body': json.dumps('Hello from Lambda!')
-    }
-if __name__ == "__main__":
-    def main():
-        result = lambda_handler({}, {})
-        print(result)
+## app.py
+from flask import Flask
 
+app = Flask(__name__)
 
-    main()
+@app.route('/')
+def hello():
+    return "Hello, Docker!"
+
+if __name__ == '__main__':
+    app.run()
